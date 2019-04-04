@@ -132,6 +132,24 @@
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.28.0.0.1\lib\monoandroid90\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.1\lib\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\monoandroid1\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\monoandroid1\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\monoandroid1\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform.AndroidSupport">
+      <HintPath>..\packages\MvvmLightAndroidSupport.5.4.1.1\lib\monoandroid1\GalaSoft.MvvmLight.Platform.AndroidSupport.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeatBoxXamarin\BeatBoxXamarin.csproj">
@@ -140,11 +158,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="Activities\BeatBoxActivity.cs" />
+    <Compile Include="Fragments\BeatBoxFragment.cs" />
+    <Compile Include="Activities\SingleFragmentActivity.cs" />
+    <Compile Include="BeatBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -154,7 +175,7 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\layout\fragment_beat_box.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
@@ -162,6 +183,37 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\layout\activity_fragment.axml" />
+    <AndroidResource Include="Resources\layout\list_item_sound.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\sample_sounds\" />
+    <Folder Include="Activities\" />
+    <Folder Include="Fragments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\sample_sounds\86_oa-h.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\85_jeeh.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\84_uueh.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\83_uoh.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\82_uhraa.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\81_uehea.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\80_oaaaahmmm.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\79_long-scream.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\78_jueb.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\77_juob.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\76_joooaah.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\75_jhuee.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\74_jah.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\73_houu.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\72_houb.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\71_hruuhb.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\70_eh.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\69_ohm-loko.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\68_indios3.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\67_indios2.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\66_indios.wav" />
+    <AndroidAsset Include="Assets\sample_sounds\65_cjipie.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\StyleCop.MSBuild.6.0.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.6.0.0\build\StyleCop.MSBuild.targets')" />
@@ -195,4 +247,5 @@
   <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.Fragment.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.1\build\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.targets')" />
 </Project>
