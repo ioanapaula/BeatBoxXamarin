@@ -23,6 +23,7 @@ namespace BeatBoxXamarin.Droid.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RetainInstance = true;
 
             _beatBox = new BeatBox(Activity);
         }
@@ -35,6 +36,13 @@ namespace BeatBoxXamarin.Droid.Fragments
             _soundRecyclerView.SetAdapter(new SoundAdapter(_beatBox.Sounds, _beatBox));
 
             return view;
+        }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            _beatBox.Release();
         }
 
         private class SoundAdapter : RecyclerView.Adapter
@@ -78,6 +86,7 @@ namespace BeatBoxXamarin.Droid.Fragments
                 _beatBox = beatBox;
                 _viewModel = new SoundViewModel(_beatBox);
                 _button = ItemView.FindViewById<Button>(Resource.Id.sound_item_button);
+                _button.SetCommand(_viewModel.ClickedCommand);
             }
 
             public void Bind(Sound sound)

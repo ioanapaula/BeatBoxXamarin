@@ -16,5 +16,7 @@ namespace BeatBoxXamarin
         public string AssetPath { get; }
 
         public string Name { get; }
+
+        public int? Id { get; set; }
     }
 }
