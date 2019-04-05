@@ -1942,17 +1942,17 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070044
 			public const int action_bar_title = 2131165252;
 			
-			// aapt resource value: 0x7f07007b
-			public const int action_container = 2131165307;
+			// aapt resource value: 0x7f07007e
+			public const int action_container = 2131165310;
 			
 			// aapt resource value: 0x7f070069
 			public const int action_context_bar = 2131165289;
 			
-			// aapt resource value: 0x7f070086
-			public const int action_divider = 2131165318;
+			// aapt resource value: 0x7f070089
+			public const int action_divider = 2131165321;
 			
-			// aapt resource value: 0x7f07007c
-			public const int action_image = 2131165308;
+			// aapt resource value: 0x7f07007f
+			public const int action_image = 2131165311;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1969,11 +1969,11 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070046
 			public const int action_mode_close_button = 2131165254;
 			
-			// aapt resource value: 0x7f07007d
-			public const int action_text = 2131165309;
+			// aapt resource value: 0x7f070080
+			public const int action_text = 2131165312;
 			
-			// aapt resource value: 0x7f070087
-			public const int actions = 2131165319;
+			// aapt resource value: 0x7f07008a
+			public const int actions = 2131165322;
 			
 			// aapt resource value: 0x7f070047
 			public const int activity_chooser_view_content = 2131165255;
@@ -2017,8 +2017,8 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070061
 			public const int checkbox = 2131165281;
 			
-			// aapt resource value: 0x7f070085
-			public const int chronometer = 2131165317;
+			// aapt resource value: 0x7f070088
+			public const int chronometer = 2131165320;
 			
 			// aapt resource value: 0x7f070037
 			public const int clip_horizontal = 2131165239;
@@ -2089,8 +2089,8 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f07004c
 			public const int icon = 2131165260;
 			
-			// aapt resource value: 0x7f070088
-			public const int icon_group = 2131165320;
+			// aapt resource value: 0x7f07008b
+			public const int icon_group = 2131165323;
 			
 			// aapt resource value: 0x7f07002f
 			public const int ifRoom = 2131165231;
@@ -2098,8 +2098,8 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070049
 			public const int image = 2131165257;
 			
-			// aapt resource value: 0x7f070081
-			public const int info = 2131165313;
+			// aapt resource value: 0x7f070084
+			public const int info = 2131165316;
 			
 			// aapt resource value: 0x7f070043
 			public const int italic = 2131165251;
@@ -2140,17 +2140,26 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070013
 			public const int normal = 2131165203;
 			
-			// aapt resource value: 0x7f070083
-			public const int notification_background = 2131165315;
+			// aapt resource value: 0x7f070086
+			public const int notification_background = 2131165318;
 			
-			// aapt resource value: 0x7f07007f
-			public const int notification_main_column = 2131165311;
+			// aapt resource value: 0x7f070082
+			public const int notification_main_column = 2131165314;
 			
-			// aapt resource value: 0x7f07007e
-			public const int notification_main_column_container = 2131165310;
+			// aapt resource value: 0x7f070081
+			public const int notification_main_column_container = 2131165313;
 			
 			// aapt resource value: 0x7f07004f
 			public const int parentPanel = 2131165263;
+			
+			// aapt resource value: 0x7f070079
+			public const int playback_layout = 2131165305;
+			
+			// aapt resource value: 0x7f07007b
+			public const int playback_speed_bar = 2131165307;
+			
+			// aapt resource value: 0x7f07007a
+			public const int playback_text = 2131165306;
 			
 			// aapt resource value: 0x7f070006
 			public const int progress_circular = 2131165190;
@@ -2161,17 +2170,17 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070062
 			public const int radio = 2131165282;
 			
-			// aapt resource value: 0x7f070079
-			public const int recyclerView = 2131165305;
+			// aapt resource value: 0x7f07007c
+			public const int recyclerView = 2131165308;
 			
 			// aapt resource value: 0x7f07003d
 			public const int right = 2131165245;
 			
-			// aapt resource value: 0x7f070082
-			public const int right_icon = 2131165314;
+			// aapt resource value: 0x7f070085
+			public const int right_icon = 2131165317;
 			
-			// aapt resource value: 0x7f070080
-			public const int right_side = 2131165312;
+			// aapt resource value: 0x7f070083
+			public const int right_side = 2131165315;
 			
 			// aapt resource value: 0x7f07001e
 			public const int screen = 2131165214;
@@ -2230,8 +2239,8 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f07001a
 			public const int showTitle = 2131165210;
 			
-			// aapt resource value: 0x7f07007a
-			public const int sound_item_button = 2131165306;
+			// aapt resource value: 0x7f07007d
+			public const int sound_item_button = 2131165309;
 			
 			// aapt resource value: 0x7f07004e
 			public const int spacer = 2131165262;
@@ -2281,8 +2290,8 @@ namespace BeatBoxXamarin.Droid
 			// aapt resource value: 0x7f070053
 			public const int textSpacerNoTitle = 2131165267;
 			
-			// aapt resource value: 0x7f070084
-			public const int time = 2131165316;
+			// aapt resource value: 0x7f070087
+			public const int time = 2131165319;
 			
 			// aapt resource value: 0x7f070011
 			public const int title = 2131165201;
@@ -2629,6 +2638,9 @@ namespace BeatBoxXamarin.Droid
 			
 			// aapt resource value: 0x7f080029
 			public const int hello = 2131230761;
+			
+			// aapt resource value: 0x7f08002b
+			public const int playback = 2131230763;
 			
 			// aapt resource value: 0x7f08001b
 			public const int search_menu_title = 2131230747;

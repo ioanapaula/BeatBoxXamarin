@@ -14,6 +14,8 @@ namespace BeatBoxXamarin.Droid.Fragments
     {
         private RecyclerView _soundRecyclerView;
         private BeatBox _beatBox;
+        private SeekBar _playbackBar;
+        private TextView _playbackText;
 
         public static BeatBoxFragment NewInstance()
         {
@@ -35,6 +37,12 @@ namespace BeatBoxXamarin.Droid.Fragments
             _soundRecyclerView.SetLayoutManager(new GridLayoutManager(container.Context, 3));
             _soundRecyclerView.SetAdapter(new SoundAdapter(_beatBox.Sounds, _beatBox));
 
+            _playbackText = view.FindViewById<TextView>(Resource.Id.playback_text);
+            _playbackText.Text = string.Format(GetString(Resource.String.playback), _beatBox.PlaybackSpeed * 100);
+
+            _playbackBar = view.FindViewById<SeekBar>(Resource.Id.playback_speed_bar);
+            _playbackBar.ProgressChanged += PlaybackSpeedChanged;
+
             return view;
         }
 
@@ -43,6 +51,13 @@ namespace BeatBoxXamarin.Droid.Fragments
             base.OnDestroy();
 
             _beatBox.Release();
+        }
+
+        public void PlaybackSpeedChanged(object sender, SeekBar.ProgressChangedEventArgs e)
+        { 
+            _beatBox.PlaybackSpeed = (float)(e.Progress + 50) / 100;
+
+            _playbackText.Text = string.Format(GetString(Resource.String.playback), _beatBox.PlaybackSpeed * 100);
         }
 
         private class SoundAdapter : RecyclerView.Adapter

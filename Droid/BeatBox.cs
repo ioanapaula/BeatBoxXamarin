@@ -5,7 +5,9 @@ using Android.Content;
 using Android.Content.Res;
 using Android.Media;
 using Android.Util;
+using Android.Widget;
 using Java.IO;
+using static Android.App.Usage.UsageEvents;
 
 namespace BeatBoxXamarin.Droid
 {
@@ -36,20 +38,22 @@ namespace BeatBoxXamarin.Droid
 
         public List<Sound> Sounds { get; } = new List<Sound>();
 
+        public float PlaybackSpeed { get; set; } = 1.0f;
+
         public void Load(Sound sound) 
         {
             var fileDescriptor = _assets.OpenFd(sound.AssetPath);
             var soundId = _soundPool.Load(fileDescriptor, 1);
             sound.Id = soundId;
-        }
+        } 
 
         public void Play(Sound sound)
         {
             var soundId = sound.Id;
 
             if (sound.Id.HasValue)
-            {
-                _soundPool.Play(soundId.Value, 1.0f, 1.0f, 1, 0, 1.0f);
+            { 
+                _soundPool.Play(soundId.Value, 1.0f, 1.0f, 1, 0, PlaybackSpeed);
             }
         }
 
