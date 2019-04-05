@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatBoxXamarin", "BeatBoxXa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatBoxXamarin.Droid", "Droid\BeatBoxXamarin.Droid.csproj", "{19A55C4D-CE97-45DA-B93D-052908EF2740}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatBoxXamarin.Tests", "BeatBoxXamarin.Tests\BeatBoxXamarin.Tests.csproj", "{A62B2D9B-0481-48A5-B825-ECB42C71BDFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{19A55C4D-CE97-45DA-B93D-052908EF2740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A55C4D-CE97-45DA-B93D-052908EF2740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A55C4D-CE97-45DA-B93D-052908EF2740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62B2D9B-0481-48A5-B825-ECB42C71BDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62B2D9B-0481-48A5-B825-ECB42C71BDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62B2D9B-0481-48A5-B825-ECB42C71BDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62B2D9B-0481-48A5-B825-ECB42C71BDFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

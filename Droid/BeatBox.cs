@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Android.Content;
 using Android.Content.Res;
+using Android.Media;
 using Android.Util;
 using Java.IO;
 
@@ -12,16 +13,50 @@ namespace BeatBoxXamarin.Droid
     {
         private const string Tag = "BeatBox";
         private const string SoundsFolder = "sample_sounds";
+        private const int MaxSounds = 5;
 
         private AssetManager _assets;
+        private SoundPool _soundPool;
 
         public BeatBox(Context context)
         {
             _assets = context.Assets;
+
+            var audioAttributes = new AudioAttributes.Builder()
+                .SetUsage(AudioUsageKind.Media)
+                .Build();
+
+            _soundPool = new SoundPool.Builder()
+                .SetMaxStreams(MaxSounds)
+                .SetAudioAttributes(audioAttributes)
+                .Build();
+
             LoadSounds();
         }
 
         public List<Sound> Sounds { get; } = new List<Sound>();
+
+        public void Load(Sound sound) 
+        {
+            var fileDescriptor = _assets.OpenFd(sound.AssetPath);
+            var soundId = _soundPool.Load(fileDescriptor, 1);
+            sound.Id = soundId;
+        }
+
+        public void Play(Sound sound)
+        {
+            var soundId = sound.Id;
+
+            if (sound.Id.HasValue)
+            {
+                _soundPool.Play(soundId.Value, 1.0f, 1.0f, 1, 0, 1.0f);
+            }
+        }
+
+        public void Release()
+        {
+            _soundPool.Release();
+        }
 
         private void LoadSounds()
         {
@@ -40,9 +75,17 @@ namespace BeatBoxXamarin.Droid
 
             foreach (string filename in soundNames)
             {
-                var assetPath = $"{SoundsFolder}/{filename}";
-                var sound = new Sound(assetPath);
-                Sounds.Add(sound);
+                try
+                {
+                    var assetPath = $"{SoundsFolder}/{filename}";
+                    var sound = new Sound(assetPath);
+                    Load(sound);
+                    Sounds.Add(sound);
+                }
+                catch (IOException ioe)
+                {
+                    Log.Error(Tag, $"Could not load sound {filename}", ioe);
+                }
             }
         }
     }
