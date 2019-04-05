@@ -6,7 +6,6 @@ namespace BeatBoxXamarin.ViewModels
     public class SoundViewModel
     {
         private IBeatBox _beatBox;
-        private int _numberOfClicks = 0;
 
         public SoundViewModel(IBeatBox beatBox)
         {
@@ -24,7 +23,6 @@ namespace BeatBoxXamarin.ViewModels
         private void OnClicked()
         {
             _beatBox.Play(Sound);
-            _numberOfClicks++;
         }
     }
 }
